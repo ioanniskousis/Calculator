@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {
+  const { reactLinkText } = props;
   return (
     <div className="App">
       <header className="App-header">
@@ -18,11 +20,19 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {reactLinkText}
         </a>
       </header>
     </div>
   );
 }
+
+App.propTypes = {
+  reactLinkText: PropTypes.string,
+};
+
+App.defaultProps = {
+  reactLinkText: 'Learn React',
+};
 
 export default App;
