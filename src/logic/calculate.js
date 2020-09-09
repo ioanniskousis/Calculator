@@ -1,11 +1,14 @@
+import operate from './operate';
+
 function calculate(calculator, buttonName) {
   let { total } = calculator;
   let { next } = calculator;
-  const { operation } = calculator;
+  let { operation } = calculator;
 
   switch (buttonName) {
     case 'AC':
     {
+      total = 0;
       break;
     }
     case '\u00B1': /* plusMinusButton */
@@ -16,27 +19,27 @@ function calculate(calculator, buttonName) {
     }
     case '\u0025': /* percentButton */
     {
-      total *= next / 100.0;
+      operation = '%';
       break;
     }
     case '\u00F7': /* divideButton */
     {
-      total /= next;
+      operation = '/';
       break;
     }
     case 'X': /* multiplyButton */
     {
-      total *= next;
+      operation = 'X';
       break;
     }
     case '-': /* subtractButton */
     {
-      total -= next;
+      operation = '-';
       break;
     }
     case '+': /* addButton */
     {
-      total += next;
+      operation = '+';
       break;
     }
     case '=': /* equalButton */
@@ -45,10 +48,15 @@ function calculate(calculator, buttonName) {
     }
     case /^ButtonFor/: /* ButtonFor Number */
     {
+      next = parseInt(buttonName.substring(buttonName.length - 1), 10);
       break;
     }
     default:
       break;
+  }
+
+  if (operation in ['%', '/', '*', '-', '+']) {
+    total = operate(total, next, operation);
   }
 
   return {

@@ -1,7 +1,8 @@
-import Big from './big.mjs';
+// import Big from 'big.mjs';
 
 function operate(numberOne, numberTwo, operation) {
-  let total = Big(0);
+  // let total = Big(0);
+  let total = 0;
 
   switch (operation) {
     case '%': /* percentage */
