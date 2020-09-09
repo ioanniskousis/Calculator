@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Button(props) {
-  const { name } = props;
-  const { sign } = props;
-  const { dblwidth } = props;
-  const { orange } = props;
+  const {
+    name,
+    sign,
+    dblwidth,
+    orange,
+  } = props;
   const classname = (dblwidth ? 'Button Button2' : 'Button')
     .concat(orange ? ' Button3' : '');
   return (
