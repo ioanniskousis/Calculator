@@ -15,19 +15,21 @@ class ButtonPanel extends React.Component {
           <Button
             name="acButton"
             sign="AC"
+            color
           />
           <Button
             name="plusMinusButton"
             sign={'\u00B1'}
+            color
           />
           <Button
             name="percentButton"
             sign={'\u0025'}
+            color
           />
           <Button
             name="divideButton"
             sign={'\u00F7'}
-            orange
           />
         </div>
 
@@ -35,19 +37,21 @@ class ButtonPanel extends React.Component {
           <Button
             name="ButtonFor7"
             sign="7"
+            color
           />
           <Button
             name="ButtonFor8"
             sign="8"
+            color
           />
           <Button
             name="ButtonFor9"
             sign="9"
+            color
           />
           <Button
             name="multiplyButton"
             sign="X"
-            orange
           />
         </div>
 
@@ -55,19 +59,21 @@ class ButtonPanel extends React.Component {
           <Button
             name="ButtonFor4"
             sign="4"
+            color
           />
           <Button
             name="ButtonFor5"
             sign="5"
+            color
           />
           <Button
             name="ButtonFor6"
             sign="6"
+            color
           />
           <Button
             name="subtractButton"
             sign="-"
-            orange
           />
         </div>
 
@@ -75,19 +81,21 @@ class ButtonPanel extends React.Component {
           <Button
             name="ButtonFor1"
             sign="1"
+            color
           />
           <Button
             name="ButtonFor2"
             sign="2"
+            color
           />
           <Button
             name="ButtonFor3"
             sign="3"
+            color
           />
           <Button
             name="addButton"
             sign="+"
-            orange
           />
         </div>
 
@@ -95,16 +103,17 @@ class ButtonPanel extends React.Component {
           <Button
             name="ButtonFor0"
             sign="0"
-            dblwidth
+            color
+            wide
           />
           <Button
             name="dotButton"
             sign="."
+            color
           />
           <Button
             name="equalButton"
             sign="="
-            orange
           />
         </div>
 

@@ -10,10 +10,10 @@ class Button extends React.Component {
   render() {
     const { name } = this.props;
     const { sign } = this.props;
-    const { dblwidth } = this.props;
-    const { orange } = this.props;
-    const classname = (dblwidth ? 'Button Button2' : 'Button')
-      .concat(orange ? ' Button3' : '');
+    const { wide } = this.props;
+    const { color } = this.props;
+    const classname = (wide ? 'Button Button2' : 'Button')
+      .concat(color ? ' Button3' : '');
     return (
       <div className={classname} id={name}>
         {sign}
@@ -25,15 +25,15 @@ class Button extends React.Component {
 Button.propTypes = {
   name: PropTypes.string,
   sign: PropTypes.string,
-  dblwidth: PropTypes.bool,
-  orange: PropTypes.bool,
+  wide: PropTypes.bool,
+  color: PropTypes.bool,
 };
 
 Button.defaultProps = {
   name: '',
   sign: '',
-  dblwidth: false,
-  orange: false,
+  wide: false,
+  color: false,
 };
 
 export default Button;
