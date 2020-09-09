@@ -20,15 +20,15 @@ function Button(props) {
 Button.propTypes = {
   name: PropTypes.string,
   sign: PropTypes.string,
-  wide: PropTypes.bool,
-  color: PropTypes.bool,
+  dblwidth: PropTypes.bool,
+  orange: PropTypes.bool,
 };
 
 Button.defaultProps = {
   name: '',
   sign: '',
-  wide: false,
-  color: false,
+  dblwidth: false,
+  orange: false,
 };
 
 export default Button;
