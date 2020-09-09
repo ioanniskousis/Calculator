@@ -4,25 +4,19 @@ import '../App.css';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { result } = this.props;
-    return (
-      <div>
-        <div className="App">
-          <Display
-            result={result}
-          />
-          <ButtonPanel />
-        </div>
+function App(props) {
+  const { result } = props;
+  return (
+    <div>
+      <div className="App">
+        <Display
+          result={result}
+        />
+        <ButtonPanel />
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
 App.propTypes = {
