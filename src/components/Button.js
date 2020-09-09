@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { name } = this.props;
-    const { sign } = this.props;
-    const { dblwidth } = this.props;
-    const { orange } = this.props;
-    const classname = (dblwidth ? 'Button Button2' : 'Button')
-      .concat(orange ? ' Button3' : '');
-    return (
-      <div className={classname} id={name}>
-        {sign}
-      </div>
-    );
-  }
+function Button(props) {
+  const { name } = props;
+  const { sign } = props;
+  const { dblwidth } = props;
+  const { orange } = props;
+  const classname = (dblwidth ? 'Button Button2' : 'Button')
+    .concat(orange ? ' Button3' : '');
+  return (
+    <div className={classname} id={name}>
+      {sign}
+    </div>
+  );
 }
 
 Button.propTypes = {
