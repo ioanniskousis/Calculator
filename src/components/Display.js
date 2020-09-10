@@ -1,20 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Display extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { result } = this.props;
-    return (
-      <div className="Display">
-        {result}
-      </div>
-    );
-  }
+function Display(props) {
+  const { result } = props;
+  return (
+    <div className="Display">
+      {result}
+    </div>
+  );
 }
 
 Display.propTypes = {
