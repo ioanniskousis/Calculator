@@ -4,101 +4,90 @@ import Button from './Button';
 function ButtonPanel() {
   return (
     <div className="ButtonPanel">
-
       <div className="ButtonGroup">
         <Button
-          name="acButton"
-          sign="AC"
+          name="AC"
+          color
         />
         <Button
-          name="plusMinusButton"
-          sign={'\u00B1'}
+          name={'\u00B1'}
+          color
         />
         <Button
-          name="percentButton"
-          sign={'\u0025'}
+          name={'\u0025'}
+          color
         />
         <Button
-          name="divideButton"
-          sign={'\u00F7'}
-          orange
+          name={'\u00F7'}
         />
       </div>
 
       <div className="ButtonGroup">
         <Button
-          name="ButtonFor7"
-          sign="7"
+          name="7"
+          color
         />
         <Button
-          name="ButtonFor8"
-          sign="8"
+          name="8"
+          color
         />
         <Button
-          name="ButtonFor9"
-          sign="9"
+          name="9"
+          color
         />
         <Button
-          name="multiplyButton"
-          sign="X"
-          orange
+          name="X"
         />
       </div>
 
       <div className="ButtonGroup">
         <Button
-          name="ButtonFor4"
-          sign="4"
+          name="4"
+          color
         />
         <Button
-          name="ButtonFor5"
-          sign="5"
+          name="5"
+          color
         />
         <Button
-          name="ButtonFor6"
-          sign="6"
+          name="6"
+          color
         />
         <Button
-          name="subtractButton"
-          sign="-"
-          orange
+          name="-"
         />
       </div>
 
       <div className="ButtonGroup">
         <Button
-          name="ButtonFor1"
-          sign="1"
+          name="1"
+          color
         />
         <Button
-          name="ButtonFor2"
-          sign="2"
+          name="2"
+          color
         />
         <Button
-          name="ButtonFor3"
-          sign="3"
+          name="3"
+          color
         />
         <Button
-          name="addButton"
-          sign="+"
-          orange
+          name="+"
         />
       </div>
 
       <div className="ButtonGroup">
         <Button
-          name="ButtonFor0"
-          sign="0"
-          dblwidth
+          name="0"
+          color
+          wide
         />
         <Button
-          name="dotButton"
-          sign="."
+          name="."
+          color
         />
         <Button
-          name="equalButton"
-          sign="="
-          orange
+          name="="
         />
       </div>
 
