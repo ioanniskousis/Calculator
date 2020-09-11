@@ -35,7 +35,7 @@
     <br />
     <a href="https://github.com/ioanniskousis/Calculator"><strong>Explore the docs</strong></a>
     <br />
-    <a href="https://calculator-jgk.herokuapp.com">Live Version</a>
+    <a href="https://calculator-jk.herokuapp.com">Live Version</a>
     <br />
     <a href="https://github.com/ioanniskousis/Calculator/issues">Report Bug</a>
     <span> - </span>
@@ -63,23 +63,38 @@
 - [Acknowledgements](#acknowledgements)
 
 ## Screen Shots  
+<img src="./src/images/calculator.png" alt="calculator.png">
 <hr />
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project  
+  The project was created using the create-react-app model  
+  The default module App was refactored to a class  
+  It renders 2 elements  
+    - Display, held in src/components/Display.js, responsible for the output of the calculations  
+    - ButtonPanel, held in src/components/ButtonPanel.js. Contains all buttons of the calculator 
+
+  When ButtonPanel is rendered it is passed a reference to the call back function for button click, and it passes it to each of the buttons contained in it. It is the handClick function in the App class  
+
+  When handleClick in App class is triggered, then the calculate function is called to translate users actions and the result is assigned to the App state triggering rendering   
 
 <hr/>
 
 <!-- ABOUT THE PROJECT -->
 
 ## Application Instructions  
+  The application performs basic functions of a calculator, paticularly, operations between two numbers   
+  - The user enters the first number  
+  - Then select an operation between %, /, *, -, +  
+  - Next, selects the second number  
+  - Clicking '=' or an operation button, provides the result to the display and expects a next number to operate on the total  
 
 <hr/>
 
 ## Live Version
 
-[Heroku](https://calculator-jgk.herokuapp.com)
+[Heroku](https://calculator-jk.herokuapp.com)
 
 <hr/>
 
@@ -120,6 +135,7 @@ This project was built using these technologies.
   - Git - GitHub  
   - ESLint  
   - Stylelint  
+  - heroku  
 
 <hr/>
 
