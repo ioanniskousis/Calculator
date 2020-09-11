@@ -1,38 +1,46 @@
+/* eslint-disable no-restricted-globals */
 import Big from '../../node_modules/big.js';
 
 function operate(numberOne, numberTwo, operation) {
-  let total = Big(0);
+  let result = new Big(0.0);
+  const total = Big(parseFloat(isNaN(numberOne) ? '0' : numberOne));
+  const next = Big(parseFloat(isNaN(numberTwo) ? '0' : numberTwo));
+  let divisionByZero = false;
 
   switch (operation) {
-    case '%': /* percentage */
+    case '%':
     {
-      total = (numberOne * numberTwo) / 100.0;
+      result = (parseFloat(total) * parseFloat(next)) / 100.0;
       break;
     }
-    case '/': /* divide */
+    case '/':
     {
-      total = numberOne / numberTwo;
+      divisionByZero = (next === null) || (parseFloat(next) === 0.0);
+      if (!divisionByZero) {
+        result = parseFloat(total) / parseFloat(next);
+      }
       break;
     }
-    case 'X': /* multiply */
+    case 'X':
     {
-      total = numberOne * numberTwo;
+      result = parseFloat(total) * parseFloat(next);
       break;
     }
-    case '-': /* subtract */
+    case '-':
     {
-      total = numberOne - numberTwo;
+      result = parseFloat(total) - parseFloat(next);
       break;
     }
-    case '+': /* add */
+    case '+':
     {
-      total = numberOne + numberTwo;
+      result = parseFloat(total) + parseFloat(next);
       break;
     }
     default:
       break;
   }
-  return total;
+
+  return divisionByZero ? 'DIVISION BY ZERO' : result;
 }
 
 export default operate;
