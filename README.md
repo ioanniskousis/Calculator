@@ -114,6 +114,7 @@
 This project was built using these technologies.
 
   - React  
+  - Big Numbers
   - CSS3  
   - webpack  
   - Git - GitHub  
