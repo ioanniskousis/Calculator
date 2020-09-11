@@ -30,9 +30,9 @@ class App extends React.Component {
 
   render() {
     const { operation } = this.state;
-    const total = this.state.total ? this.state.total : '0';
-    const next = this.state.next ? this.state.next : '0';
-    const output = (operation === '=') ? total : next;
+    const total = this.state.total ? this.state.total.toString() : '0';
+    const next = this.state.next ? this.state.next.toString() : '0';
+    const output = (operation === '=') ? total.toString() : next.toString();
     return (
       <div>
         <div className="App" id="App">
