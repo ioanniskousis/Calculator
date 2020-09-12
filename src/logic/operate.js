@@ -5,9 +5,6 @@ function operate(numberOne, numberTwo, operation) {
   let result = new Big(0.0);
   const total = Big(parseFloat(isNaN(numberOne) ? '0' : numberOne));
   const next = Big(parseFloat(isNaN(numberTwo) ? '0' : numberTwo));
-  // let result = 0.0;
-  // const total = parseFloat(isNaN(numberOne) ? '0' : numberOne);
-  // const next = parseFloat(isNaN(numberTwo) ? '0' : numberTwo);
   let divisionByZero = false;
 
   switch (operation) {

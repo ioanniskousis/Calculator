@@ -5,24 +5,24 @@ function calculate(calculator, buttonName) {
   let equal = false;
 
   switch (buttonName) {
-    case 'AC': /* clearButton */
+    case 'AC':
     {
       total = '0';
       next = '0';
       operation = null;
       break;
     }
-    case '-/+': /* plusMinusButton */
+    case '-/+':
     {
       total = (parseFloat(total) * (-1)).toString();
       next = (parseFloat(next) * (-1)).toString();
       break;
     }
-    case '%': /* percentButton */
-    case '/': /* divideButton */
-    case 'X': /* multiplyButton */
-    case '-': /* subtractButton */
-    case '+': /* addButton */
+    case '%':
+    case '/':
+    case 'X':
+    case '-':
+    case '+':
     {
       if (operation === '=') {
         next = 0;
@@ -36,12 +36,12 @@ function calculate(calculator, buttonName) {
       operation = buttonName;
       break;
     }
-    case '=': /* equalButton */
+    case '=':
     {
       equal = true;
       break;
     }
-    case '0': /* ButtonFor Number */
+    case '0':
     case '1':
     case '2':
     case '3':

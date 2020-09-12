@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Display(props) {
-  const { output } = props;
-  const { total } = props;
-  const { operation } = props;
-  // alert(total);
+  const { output, total, operation } = props;
   return (
     <div className="Display">
       {output}
