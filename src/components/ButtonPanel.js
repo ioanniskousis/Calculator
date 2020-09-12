@@ -4,114 +4,62 @@ import Button from './Button';
 
 function ButtonPanel(props) {
   const { clickHandler } = props;
+  const groupsInfo = [
+    [
+      { name: 'AC', wide: null, color: true },
+      { name: '-/+', wide: null, color: true },
+      { name: '%', wide: null, color: true },
+      { name: '/', wide: null, color: null },
+    ],
+    [
+      { name: '7', wide: null, color: true },
+      { name: '8', wide: null, color: true },
+      { name: '9', wide: null, color: true },
+      { name: 'X', wide: null, color: null },
+    ],
+    [
+      { name: '4', wide: null, color: true },
+      { name: '5', wide: null, color: true },
+      { name: '6', wide: null, color: true },
+      { name: '-', wide: null, color: null },
+    ],
+    [
+      { name: '1', wide: null, color: true },
+      { name: '2', wide: null, color: true },
+      { name: '3', wide: null, color: true },
+      { name: '+', wide: null, color: null },
+    ],
+    [
+      { name: '0', wide: true, color: true },
+      { name: '.', wide: null, color: true },
+      { name: '=', wide: null, color: null },
+    ],
+  ];
+
+  const buttonGroups = [];
+  // eslint-disable-next-line array-callback-return
+  groupsInfo.map(group => {
+    const buttons = [];
+    group.forEach(button => {
+      buttons.push(
+        <Button
+          name={button.name}
+          wide={button.wide}
+          color={button.color}
+          clickHandler={clickHandler}
+        />,
+      );
+    });
+
+    buttonGroups.push(
+      <div className="ButtonGroup">
+        {buttons}
+      </div>,
+    );
+  });
   return (
     <div className="ButtonPanel">
-      <div className="ButtonGroup">
-        <Button
-          name="AC"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="-/+"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="%"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="/"
-          clickHandler={clickHandler}
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="7"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="8"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="9"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="X"
-          clickHandler={clickHandler}
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="4"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="5"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="6"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="-"
-          clickHandler={clickHandler}
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="1"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="2"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="3"
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="+"
-          clickHandler={clickHandler}
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="0"
-          color
-          wide
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="."
-          color
-          clickHandler={clickHandler}
-        />
-        <Button
-          name="="
-          clickHandler={clickHandler}
-        />
-      </div>
-
+      {buttonGroups}
     </div>
   );
 }
