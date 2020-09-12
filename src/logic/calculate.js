@@ -19,6 +19,10 @@ function calculate(calculator, buttonName) {
       break;
     }
     case '%':
+    {
+      next = operate(parseFloat(total), parseFloat(next), buttonName).toString();
+      break;
+    }
     case '/':
     case 'X':
     case '-':
