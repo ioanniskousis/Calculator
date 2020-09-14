@@ -1,68 +1,175 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Calculator
 
-## Available Scripts
+<!--
+*** Thanks for checking out this README Template. If you have a suggestion that would
+*** make this better, please fork the repo and create a pull request or simply open
+*** an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-In the project directory, you can run:
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-### `yarn start`
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/ioanniskousis/Calculator">
+    <img src="src/images/microverse.png" alt="Microverse Logo" width="80" height="80">
+  </a>
+  
+  <h3 align="center">The Calculator Application</h3>
+  
+  <p align="center">
+    This project is part of the Microverse curriculum in React course!
+    <br />
+    <a href="https://github.com/ioanniskousis/Calculator"><strong>Explore the docs</strong></a>
+    <br />
+    <a href="https://calculator-jk.herokuapp.com">Live Version</a>
+    <br />
+    <a href="https://github.com/ioanniskousis/Calculator/issues">Report Bug</a>
+    <span> - </span>
+    <a href="https://github.com/ioanniskousis/Calculator/issues">Request Feature</a>
+  </p>
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## This is a Calculator application
 
-### `yarn test`
+<hr />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- TABLE OF CONTENTS -->
 
-### `yarn build`
+## Table of Contents
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Screen Shots](#screen-shots)
+- [About the Project](#about-the-project)
+- [Application Instructions](#application-instructions)
+- [Live Version](#live-version)
+- [System Requierments](#system-requierments)
+- [Development](#development)
+- [Dependencies](#dependencies)
+- [Built With](#built-with)
+- [Contributors](#contributors)
+- [Acknowledgements](#acknowledgements)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Screen Shots  
+<img src="./src/images/calculator.png" alt="calculator.png">
+<hr />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- ABOUT THE PROJECT -->
 
-### `yarn eject`
+## About The Project  
+  The project was created using the create-react-app model  
+  The default module App was refactored to a class  
+  It renders 2 elements  
+    - Display, held in src/components/Display.js, responsible for the output of the calculations  
+    - ButtonPanel, held in src/components/ButtonPanel.js. Contains all buttons of the calculator 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  When ButtonPanel is rendered it is passed a reference to the call back function for button click, and it passes it to each of the buttons contained in it. It is the handClick function in the App class  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  When handleClick in App class is triggered, then the calculate function is called to translate users actions and the result is assigned to the App state triggering rendering   
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<hr/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- ABOUT THE PROJECT -->
 
-## Learn More
+## Application Instructions  
+  The application performs basic functions of a calculator, paticularly, operations between two numbers   
+  - The user enters the first number  
+  - Then select an operation between %, /, *, -, +  
+  - Next, selects the second number  
+  - Clicking '=' or an operation button, provides the result to the display and expects a next number to operate on the total  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Live Version
 
-### Code Splitting
+[Heroku](https://calculator-jk.herokuapp.com)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<hr/>
 
-### Analyzing the Bundle Size
+## System Requierments
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+  - JavaScript Enabled  
+  - You need to Disable Cross-Origin-Restrictions from your browser if you want to open the index.html from your file system without using a server.  
 
-### Making a Progressive Web App
+<hr/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Development
+  * Clone the project
+  ```
+    https://github.com/ioanniskousis/Calculator.git
+    
+    Use VSCode and Live Server to show index.html
+    Since webpack is used, run 'npm run build' on you terminal before opening
+  ``` 
+<hr/>
 
-### Advanced Configuration
+## Dependencies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  please run
+  ```
+    npm run build
+  ```
+  to comply with the dependencies held in package.json
+<hr/>
 
-### Deployment
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This project was built using these technologies.
 
-### `yarn build` fails to minify
+  - React  
+  - Big Numbers
+  - CSS3  
+  - webpack  
+  - Git - GitHub  
+  - ESLint  
+  - Stylelint  
+  - heroku  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<hr/>
+
+<!-- CONTACT -->
+
+## Contributors
+
+:bust_in_silhouette:
+​
+## Ioannis Kousis
+
+- Github: [@ioanniskousis](https://github.com/ioanniskousis)
+- Twitter: [@ioanniskousis](https://twitter.com/ioanniskousis)
+- Linkedin: [Ioannis Kousis](https://www.linkedin.com/in/jgkousis)
+- E-mail: jgkousis@gmail.com
+​
+<hr/>
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+  - [Microverse](https://www.microverse.org/)
+  - [The Odin Project](https://www.theodinproject.com/)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/ioanniskousis/Calculator.svg?style=flat-square
+[contributors-url]: https://github.com/ioanniskousis/Calculator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ioanniskousis/Calculator.svg?style=flat-square
+[forks-url]: https://github.com/ioanniskousis/Calculator/network/members
+[stars-shield]: https://img.shields.io/github/stars/ioanniskousis/Calculator.svg?style=flat-square
+[stars-url]: https://github.com/ioanniskousis/Calculator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ioanniskousis/Calculator.svg?style=flat-square
+[issues-url]: https://github.com/ioanniskousis/Calculator/issues
+
