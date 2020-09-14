@@ -1,62 +1,101 @@
 import operate from './operate';
 
 function calculate(calculator, buttonName) {
-  let { total } = calculator;
-  let { next } = calculator;
-  let { operation } = calculator;
+  let { total, next, operation } = calculator;
+  let equal = false;
 
   switch (buttonName) {
     case 'AC':
     {
-      total = 0;
+      total = '0';
+      next = '0';
+      operation = null;
       break;
     }
-    case '\u00B1': /* plusMinusButton */
+    case '-/+':
     {
-      total *= -1;
-      next *= -1;
+      total = (parseFloat(total) * (-1)).toString();
+      next = (parseFloat(next) * (-1)).toString();
       break;
     }
-    case '\u0025': /* percentButton */
+    case '%':
     {
-      operation = '%';
+      next = operate(parseFloat(total), parseFloat(next), buttonName).toString();
       break;
     }
-    case '\u00F7': /* divideButton */
+    case '/':
+    case 'X':
+    case '-':
+    case '+':
     {
-      operation = '/';
+      if (operation === '=') {
+        next = 0;
+      } else if ('%/X-+'.includes(operation)) {
+        total = operate(parseFloat(total), parseFloat(next), operation).toString();
+        next = '0';
+      } else {
+        total = next;
+        next = '0';
+      }
+      operation = buttonName;
       break;
     }
-    case 'X': /* multiplyButton */
+    case '=':
     {
-      operation = 'X';
+      equal = true;
       break;
     }
-    case '-': /* subtractButton */
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
     {
-      operation = '-';
+      if (operation === '=') {
+        operation = null;
+        next = null;
+        total = '0';
+      }
+
+      if (next) {
+        next = (next === '0') ? buttonName : next.concat(buttonName);
+      } else {
+        next = buttonName;
+      }
       break;
     }
-    case '+': /* addButton */
+    case '.':
     {
-      operation = '+';
-      break;
-    }
-    case '=': /* equalButton */
-    {
-      break;
-    }
-    case /^ButtonFor/: /* ButtonFor Number */
-    {
-      next = parseInt(buttonName.substring(buttonName.length - 1), 10);
+      if (!next || !next.toString().includes(buttonName)) {
+        if (operation === '=') {
+          operation = null;
+          next = '0';
+          total = '0';
+        }
+
+        if (next) {
+          next = (next || '0').concat(buttonName);
+        } else {
+          next = '0'.concat(buttonName);
+        }
+      }
       break;
     }
     default:
       break;
   }
 
-  if (operation in ['%', '/', '*', '-', '+']) {
-    total = operate(total, next, operation);
+  if (equal) {
+    if ('%/X-+'.includes(operation)) {
+      total = operate(parseFloat(total), parseFloat(next), operation);
+      operation = '=';
+      next = total;
+    }
   }
 
   return {

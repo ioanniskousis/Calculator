@@ -1,98 +1,75 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
-function ButtonPanel() {
+function ButtonPanel(props) {
+  const { clickHandler } = props;
+  const groupsInfo = [
+    [
+      { name: 'AC', wide: null, color: true },
+      { name: '-/+', wide: null, color: true },
+      { name: '%', wide: null, color: true },
+      { name: '/', wide: null, color: null },
+    ],
+    [
+      { name: '7', wide: null, color: true },
+      { name: '8', wide: null, color: true },
+      { name: '9', wide: null, color: true },
+      { name: 'X', wide: null, color: null },
+    ],
+    [
+      { name: '4', wide: null, color: true },
+      { name: '5', wide: null, color: true },
+      { name: '6', wide: null, color: true },
+      { name: '-', wide: null, color: null },
+    ],
+    [
+      { name: '1', wide: null, color: true },
+      { name: '2', wide: null, color: true },
+      { name: '3', wide: null, color: true },
+      { name: '+', wide: null, color: null },
+    ],
+    [
+      { name: '0', wide: true, color: true },
+      { name: '.', wide: null, color: true },
+      { name: '=', wide: null, color: null },
+    ],
+  ];
+
+  const buttonGroups = [];
+  // eslint-disable-next-line array-callback-return
+  groupsInfo.map(group => {
+    const buttons = [];
+    group.forEach(button => {
+      buttons.push(
+        <Button
+          name={button.name}
+          wide={button.wide}
+          color={button.color}
+          clickHandler={clickHandler}
+        />,
+      );
+    });
+
+    buttonGroups.push(
+      <div className="ButtonGroup">
+        {buttons}
+      </div>,
+    );
+  });
   return (
     <div className="ButtonPanel">
-      <div className="ButtonGroup">
-        <Button
-          name="AC"
-          color
-        />
-        <Button
-          name={'\u00B1'}
-          color
-        />
-        <Button
-          name={'\u0025'}
-          color
-        />
-        <Button
-          name={'\u00F7'}
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="7"
-          color
-        />
-        <Button
-          name="8"
-          color
-        />
-        <Button
-          name="9"
-          color
-        />
-        <Button
-          name="X"
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="4"
-          color
-        />
-        <Button
-          name="5"
-          color
-        />
-        <Button
-          name="6"
-          color
-        />
-        <Button
-          name="-"
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="1"
-          color
-        />
-        <Button
-          name="2"
-          color
-        />
-        <Button
-          name="3"
-          color
-        />
-        <Button
-          name="+"
-        />
-      </div>
-
-      <div className="ButtonGroup">
-        <Button
-          name="0"
-          color
-          wide
-        />
-        <Button
-          name="."
-          color
-        />
-        <Button
-          name="="
-        />
-      </div>
-
+      {buttonGroups}
     </div>
   );
 }
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};
+
+ButtonPanel.defaultProps = {
+  clickHandler: null,
+};
 
 export default ButtonPanel;

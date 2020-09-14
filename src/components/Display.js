@@ -2,20 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Display(props) {
-  const { result } = props;
+  const { output, total, operation } = props;
   return (
     <div className="Display">
-      {result}
+      {output}
+      <div className="displayTotal">
+        {total ? total.toString().concat(' ').concat(operation || '') : ''}
+      </div>
     </div>
   );
 }
 
 Display.propTypes = {
-  result: PropTypes.string,
+  output: PropTypes.string,
+  total: PropTypes.string,
+  operation: PropTypes.string,
 };
 
 Display.defaultProps = {
-  result: '0',
+  output: '0',
+  total: '0',
+  operation: '',
 };
 
 export default Display;
