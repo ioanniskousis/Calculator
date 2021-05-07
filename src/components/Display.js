@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Display(props) {
+const Display = props => {
   const { output, total, operation } = props;
   return (
-    <div className="Display">
+    <div className="display">
       {output}
       <div className="displayTotal">
         {total ? total.toString().concat(' ').concat(operation || '') : ''}
       </div>
     </div>
   );
-}
+};
 
 Display.propTypes = {
   output: PropTypes.string,
