@@ -3,27 +3,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function handleClick(buttonName, clickHandler) {
-  clickHandler(buttonName);
-}
-
-function Button(props) {
-  const { clickHandler } = props;
-  const { name } = props;
-  const { wide } = props;
-  const { color } = props;
-  const classname = (wide ? 'Button Button2' : 'Button')
-    .concat(color ? ' Button3' : '');
+const Button = ({
+  clickHandler,
+  name,
+  wide,
+  color,
+}) => {
+  const classname = (wide ? 'button wide-button' : 'button')
+    .concat(color ? ' gray-button' : '');
   return (
     <div
       className={classname}
       id={name}
-      onClick={() => handleClick(name, clickHandler)}
+      onClick={clickHandler}
     >
       {name}
     </div>
   );
-}
+};
 
 Button.propTypes = {
   name: PropTypes.string,

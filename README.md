@@ -51,16 +51,20 @@
 
 ## Table of Contents
 
-- [Screen Shots](#screen-shots)
-- [About the Project](#about-the-project)
-- [Application Instructions](#application-instructions)
-- [Live Version](#live-version)
-- [System Requierments](#system-requierments)
-- [Development](#development)
-- [Dependencies](#dependencies)
-- [Built With](#built-with)
-- [Contributors](#contributors)
-- [Acknowledgements](#acknowledgements)
+- [Calculator](#calculator)
+  - [This is a Calculator application](#this-is-a-calculator-application)
+  - [Table of Contents](#table-of-contents)
+  - [Screen Shots](#screen-shots)
+  - [About The Project](#about-the-project)
+  - [Application Instructions](#application-instructions)
+  - [Live Version](#live-version)
+  - [System Requierments](#system-requierments)
+  - [Development](#development)
+  - [Dependencies](#dependencies)
+  - [Built With](#built-with)
+  - [Contributors](#contributors)
+  - [Ioannis Kousis](#ioannis-kousis)
+  - [Acknowledgements](#acknowledgements)
 
 ## Screen Shots  
 <img src="./src/images/calculator.png" alt="calculator.png">
@@ -70,14 +74,13 @@
 
 ## About The Project  
   The project was created using the create-react-app model  
-  The default module App was refactored to a class  
-  It renders 2 elements  
+  The App functional component renders 2 elements  
     - Display, held in src/components/Display.js, responsible for the output of the calculations  
     - ButtonPanel, held in src/components/ButtonPanel.js. Contains all buttons of the calculator 
 
-  When ButtonPanel is rendered it is passed a reference to the call back function for button click, and it passes it to each of the buttons contained in it. It is the handClick function in the App class  
+  When ButtonPanel is rendered it is passed a reference to the call back function for button click, and it passes it to each of the buttons contained in it. It is the handClick function in the App component  
 
-  When handleClick in App class is triggered, then the calculate function is called to translate users actions and the result is assigned to the App state triggering rendering   
+  When handleClick in App component is triggered, then the calculate function is called to translate users actions and the result is assigned to the App state triggering rendering   
 
 <hr/>
 

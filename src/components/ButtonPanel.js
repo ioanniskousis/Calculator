@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-function ButtonPanel(props) {
+const ButtonPanel = props => {
   const { clickHandler } = props;
   const groupsInfo = [
     [
@@ -52,17 +52,17 @@ function ButtonPanel(props) {
     });
 
     buttonGroups.push(
-      <div className="ButtonGroup">
+      <div className="button-group">
         {buttons}
       </div>,
     );
   });
   return (
-    <div className="ButtonPanel">
+    <div className="button-panel">
       {buttonGroups}
     </div>
   );
-}
+};
 
 ButtonPanel.propTypes = {
   clickHandler: PropTypes.func,

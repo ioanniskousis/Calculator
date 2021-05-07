@@ -1,65 +1,37 @@
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import '../App.css';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: props.total,
-      next: props.next,
-      operation: props.operation,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = () => {
+  const [total, setTotal] = useState(0);
+  const [next, setNext] = useState(0);
+  const [operation, setOperation] = useState(null);
 
-  handleClick(buttonName) {
-    const { state } = this;
-    const result = calculate(state, buttonName);
-    const { total, next, operation } = result;
-    this.setState({
-      total,
-      next,
-      operation,
-    });
-  }
+  const handleClick = e => {
+    const buttonName = e.target.getAttribute('id');
 
-  render() {
-    const { operation } = this.state;
-    const total = this.state.total ? this.state.total.toString() : '0';
-    const next = this.state.next ? this.state.next.toString() : '0';
-    const output = (operation === '=') ? total.toString() : next.toString();
-    return (
-      <div>
-        <div className="App" id="App">
-          <Display
-            output={output}
-            total={total}
-            operation={operation}
-          />
-          <ButtonPanel
-            clickHandler={this.handleClick}
-          />
-        </div>
-      </div>
-    );
-  }
-}
+    const calculator = { total, next, operation };
+    const result = calculate(calculator, buttonName);
+    setTotal(result.total);
+    setNext(result.next);
+    setOperation(result.operation);
+  };
 
-App.propTypes = {
-  total: PropTypes.string,
-  next: PropTypes.string,
-  operation: PropTypes.string,
-};
-
-App.defaultProps = {
-  total: null,
-  next: null,
-  operation: null,
+  const output = (operation === '=') ? total.toString() : next.toString();
+  return (
+    <div className="app" id="app">
+      <Display
+        output={output}
+        total={total}
+        operation={operation}
+      />
+      <ButtonPanel
+        clickHandler={handleClick}
+      />
+    </div>
+  );
 };
 
 export default App;
